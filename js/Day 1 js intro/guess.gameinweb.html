@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id="name" > name </p>
+<h1 id="rand" > number </h1>
+<h2 id=chances> chances </h2>
+<script>
+var targetNumber = Math.round(Math.random() * 100);
+
+var name = prompt("enter your name");
+names = document.getElementById('name');
+ names.innerHTML = "yourname is" + name;
+ randomnumber = document.getElementById('rand');
+ randomnumber.innerHTML = "random number is " + targetNumber;
+
+
+</script>
+
+</body>
+</html>

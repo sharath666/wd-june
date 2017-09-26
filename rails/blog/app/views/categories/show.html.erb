@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+<title>Categories</title>
+<style>
+
+body{
+background-color: linen;
+}
+h2{
+	color:blue;
+
+}
+
+h3{
+	
+	color:red;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>CategoryName:  <%= @category.name %> </h2>
+
+<h3> Related articles </h3>
+<ol>
+<% @articles.each do |article| %>
+
+<li> <p style=color:green;>Article-Title: <%= article.title %></p>
+<p style=color:green;>	Description: <%= article.body %></p>
+<p style=color:green;> Published-date: <%= article.published_date %> </p></li>
+</ol>
+<% end %>
+<button><%= link_to "back", categories_path %></button>
+
+</html>

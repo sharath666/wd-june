@@ -1,0 +1,13 @@
+<h2> new product</h2>
+<%= form_for @product do |t| %>
+	<label>product name : </label>
+		<%= t.text_field :name %><br /><br />
+	<label> price </label>
+	<%= t.text_field :price %><br /><br />
+		<label> description </label>
+	<%= t.text_field :description %><br /><br />
+	<label> category </label>
+	<%= t.collection_select :category_id, Category.all, :id , :name, prompt: "select the category" %>
+	<%= t.submit  "add product" %>
+
+	<% end %>

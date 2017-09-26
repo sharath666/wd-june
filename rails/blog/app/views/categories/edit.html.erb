@@ -1,0 +1,9 @@
+<h2> edit category </h2>
+<%= form_for @category do |t| %>
+
+	<label> Name: </label><br />
+	<%= t.text_field :name, placeholder: "enter the category name" %><br /><br />
+
+	
+	<%= t.submit %> Or <%= link_to "back", categories_path %>
+	<% end %>

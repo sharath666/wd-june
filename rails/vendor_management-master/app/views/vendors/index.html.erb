@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag vendors_path, method: :get do %>
+<label>vendor search </label>
+<%= text_field_tag :search %>
+<%= submit_tag :search %>
+
+
+<% end %> 
+
+
+
+
+
+<h1>Listing Vendors</h1>
+<table>
+  <thead>
+    <tr>
+      <th>firstName</th>
+      <th>LastName</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.first_name %></td>
+        <td><%= vendor.lastname %></td>
+        <td><%= vendor.phone_number %></td>
+        <td><%= vendor.email %></td>
+        <td><%= link_to 'Show', vendor %></td>
+        <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+        <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vendor', new_vendor_path %>

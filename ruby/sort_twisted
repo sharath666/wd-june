@@ -1,0 +1,10 @@
+def sort_twisted37(arr)
+  arr.each do |array|
+  if array==3
+  return 7
+  elsif array==7
+  return 3 
+  else
+  return arr.sort
+  end
+end

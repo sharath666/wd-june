@@ -1,0 +1,36 @@
+<%= form_for(@vendor) do |f| %>
+ <% if @vendor.errors.any? %>
+  <h3> These errors prohibited the form from being saved : </h3>
+  <ul>
+  <% @vendor.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <%= f.label :select_business %>
+  <%= f.collection_check_boxes :business_ids, Business.all, :id, :name %>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

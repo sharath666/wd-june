@@ -1,0 +1,14 @@
+<h2> Article </h2>
+<% if @articles.empty? %>
+<p> No articles found </p>
+<% else %>
+
+<% @articles.each do |article| %>
+<ul>
+	<li><%= article.title %> <%= article.body %> <%= article.published_date %></li>
+		<%= link_to "show", article_path(article.id) %>
+	</ul>
+	<% end %>
+	<% end %>
+
+<%= link_to "Add article", new_article_path %>	

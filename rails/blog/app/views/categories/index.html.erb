@@ -1,0 +1,17 @@
+<h2> Categories </h2>
+<% if @categories.empty? %>
+<h3> No Category found </h3>
+<% else %>
+
+<% @categories.each do |category| %>
+	<ul>
+	<li><div style="color:lightblue;"><%= link_to category.name, articles_path%> </div></li>
+	<button><%= link_to "edit", edit_category_path(category.id) %></button>
+	<button><%= link_to "back", categories_path %></button>
+	<button><%= link_to "show", category_path(category.id) %></button>
+		
+	</ul>
+	<% end %>
+	<% end %>
+
+<%= link_to "Add category", new_category_path %>	

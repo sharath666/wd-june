@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @instructor.mobile %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @instructor.bio %>
+</p>
+<p>
+<strong> course:</strong>
+
+<ol>
+<% @instructor.courses.each do |c| %>
+<li><%= c.name %></li>
+<% end %>
+</ol>
+
+
+
+<ol>
+<% @instructor.courses.each do |c| %>
+<li><%= c.name %></li>
+<% if c.students.count == 0 %>
+
+<p> no students enrolled</p>
+
+		
+<% else %>
+<p>students enrolled (<%= c.students.count %>)</p>
+		<ul>
+		
+<% c.students.each do |s| %>
+<li><%=	s.name %></li>
+<% end %>
+</ul>
+<% end %>
+<% end %>
+</ol>
+</p>
+
+
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  tin_number: MyString
+  business_type: MyString
+
+two:
+  name: 
+  tin_number: MyString
+  business_type: MyString

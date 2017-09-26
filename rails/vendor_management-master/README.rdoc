@@ -1,0 +1,25 @@
+You have joined a company called Future Apps as a Jr Software Developer. Your tech lead has assigned you to a project that was started by another developer, but it was stopped as he was moved to another project. Now your tech lead wants you to finish the application that he started. He has sent you an email on few things that needs to be done before the receptionist starts using it for keeping track of the contact details of vendors. 
+
+Currently there are few models but we'll start with Vendor model that has just the attributes like the name, age and phone_number, here are few things that needs to be done.
+
+1. The application should have 2 attributes for keeping track of the Vendor name i.e. first_name & last_name instead of name. The thing is there are already quite a few people names in the system (read the note file mentioned below) , if you decide to remove the column and add a new one, we’ll lose the data, hence change the name column to first name and add a new column for last name
+
+2. While saving the person details, you are now expected to add the person’s email. Validation is quite important as we’ll use this to send greetings and invoices. For some reason there is a column known as age, you ahead and remove it from the db, its not required. 
+
+3. Along with the email, we should now also keep track of the name of the business, tin number and business type. There is a possibility that one vendor will be offering services in multiple business types. 
+
+4. We will require CRUD interface for adding business type, it can be namely like  transport, stationary, security, house keeping or pantry etc.
+
+5. Many times service is quite poor and we often need to change the vendor, we need to provide a screen where all the people who offer services for a certain business type need to be listed. 
+
+6. Since many vendors offer multiple services, we need to see for what business types each vendor is offering services 
+
+7. By the way though there are validations added, for some reason they don't appear on the web page. 
+
+8. Allow the reception to navigate between the vendors & business types. As the reception calls the vendors on the regular basis, why don't you consider setting up a simple search functionality the page where vendors are listed. Check out this video of how to get it to work - 
+https://youtu.be/1PuADR1mHYk
+
+Good luck. Let me know if you require anything. This is the first set of requirements i could find, i will follow up with others in the next mail. 
+
+NOTE - run the task file 
+rake setup_data # to setup the fake vendor data

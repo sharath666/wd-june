@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vendor.first_name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vendor.lastname %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @vendor.phone_number %>
+</p>
+
+<p>
+  <strong>email</strong>
+  <%= @vendor.email %>
+</p>
+
+<p>
+<strong>business_types: </strong>
+<% @vendor.businesses.each do |busi|
+ %>
+ <%= busi.name %>
+ <% end %>
+ </p>
+
+<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+<%= link_to 'Back', vendors_path %>

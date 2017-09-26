@@ -1,0 +1,8 @@
+<%= form_for @comment do |comment| %>
+<label> Comment :</label>
+<%= comment.text_area :comment %><br /><br />
+<label> published_date :</label>
+<%= comment.date_select :published_date %><br /><br />
+
+<%= comment.submit "add comment" %>
+<% end %>

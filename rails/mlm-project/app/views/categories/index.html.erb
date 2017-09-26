@@ -1,0 +1,11 @@
+<h2>listing categories </h2>
+<% if @categories.empty? %>
+<p>categories are empty </p>
+<% else %>
+<ol>
+<% @categories.each do |category| %>
+	<li><%= category.name %></li>
+	<% end %>
+
+	<% end %>
+	</ol>

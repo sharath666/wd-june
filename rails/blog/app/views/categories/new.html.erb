@@ -1,0 +1,12 @@
+<h2> Add Category </h2>
+
+<%= form_for @category do |t| %>
+
+	<label> name: </label><br />
+	<%= t.text_field :name, placeholder: "enter the category" %><br /><br />
+
+
+
+	
+	<%= t.submit %> Or <%= link_to "back", categories_path %>
+	<% end %> 

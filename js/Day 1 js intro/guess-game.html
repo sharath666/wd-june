@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id="guess"> guess number </p>
+<h1 id="chance"> chances left</h1>
+<script type="text/javascript">
+
+
+	var name = prompt("Enter your name");
+	console.log("Welcome to the game " + name);
+	var targetNumber = Math.round(Math.random() * 100);
+	console.log(targetNumber)
+	var playerGuess = 0;
+	var maximumGuess = 10;
+	var attempts = (playerGuess - maximumGuess);
+	var chancesHandle = getElementById('chance');
+	while (playerGuess < maximumGuess){
+		var guess = parseInt(prompt("Guess the number"));
+	
+	if(guess  < targetNumber){
+		console.log("oops Your guess was low");
+	}else if (guess > targetNumber){
+		console.log("oops your guess was high");
+
+	}else if(guess == targetNumber){ 
+	console.log("u guessed my number");
+	
+
+chancesHandle.innerHTML= "total chances" + attempts;
+	console.log("guess remaining" + attempts);
+	break;
+}
+playerGuess++;
+}
+</script>
+</body>
+</html>

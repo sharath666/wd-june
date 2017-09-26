@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1 id='msg'> welcome to js</h1>
+<h2 id='message'> hello </h2>
+<script type="text/javascript">
+	/*alert("click on this to get into js");
+	console.log("hello world"); */
+	var msg = document.getElementById('msg');
+	var msgHandle = document.getElementById('message');
+	var name = prompt("enter your name");
+	var email = prompt("enter your email");
+	msg.innerHTML= "hi " + name;
+	msgHandle.innerHTML = "hello" + email;
+	
+</script>
+</body>
+</html>

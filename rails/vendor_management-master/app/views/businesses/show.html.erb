@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @business.name %>
+</p>
+
+<p>
+  <strong>Tin number:</strong>
+  <%= @business.tin_number %>
+</p>
+
+<p>
+  <strong>Business type:</strong>
+  <%= @business.business_type %>
+
+</p>
+
+<p>
+  <strong>vendors:</strong>
+  <% @business.vendors.each do |vendor| %>
+  <%= vendor.first_name %>
+  <% end %>
+  
+</p>
+
+
+<%= link_to 'Edit', edit_business_path(@business) %> |
+<%= link_to 'Back', businesses_path %>
