@@ -12,6 +12,8 @@ puts n1.round #18
 
 puts n2.round #17
 
+# whenever we invoke a method on an object it will returns a new object, hence our variables is still refering to the old values
+
 puts n1 #18.3 it will refering the same original varaiable
 puts n2 #16.7
 

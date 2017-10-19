@@ -16,10 +16,7 @@ puts final_numbers.join(", ")
 puts "enter the positive integer"
 num=gets.to_i
 n=0
-if num<0
-	puts "enter the integer"
-else
+
 	num.times do 
 		puts n +=1
 	end
-end

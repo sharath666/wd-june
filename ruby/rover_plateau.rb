@@ -1,4 +1,4 @@
-class Rover
+ 	class Rover
 	attr_accessor :x_axis, :y_axis, :direction
 
 

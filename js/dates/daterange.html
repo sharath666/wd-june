@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Ranges</title>
+</head>
+<body>
+<label>enter the start date</label>
+<input type="date" id="start">
+<label> enter the end date</label>
+<input type="date" id="end">
+<ol >
+<li id="msg"></li>
+
+</ol>
+<script>
+var days= {
+	0: "Sunday", 1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday"
+};
+var months= {
+	0:"Jan", 1:"Feb", 2:"Mar", 3:"Apr", 4:"May", 5:"June", 6:"July", 7:"August", 8:"Sep", 9:"Oct", 10:"Nov", 11:"Dec"
+}
+var startDateHandle = document.getElementById('start');
+var endDateHandle = document.getElementById('end');
+var msgHandle = document.getElementById('msg');
+var dateArray = []; 
+var startDate;
+var endDate;
+
+function populateRange(startDate, endDate){
+	while(startDate <= endDate){
+		dateArray.push(new Date(startDate));
+		startDate.setDate(startDate.getDate() + 1);
+	}
+}
+
+endDateHandle.addEventListener('change', function(){
+	var startInput = startDateHandle.value.split("-");
+	var endInput = endDateHandle.value.split("-");
+	startDate = new Date(startInput[0], startInput[1]-1, startInput[2]);
+	endDate  = new Date(endInput[0], endInput[1]-1, endInput[2]);
+	populateRange(startDate, endDate);
+	console.log(dateArray);
+
+	// date userDate will become the new date object in that we are calling getDay method
+ dateArray.forEach(function(n){
+ 	msgHandle.innerHTML = document.write("<li>" + days[n.getDay()]  + n.getDate() +  months[n.getMonth()] + n.getFullYear());
+ 
+ });
+
+});
+
+</script>
+</body>
+</html>

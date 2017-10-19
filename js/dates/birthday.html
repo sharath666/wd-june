@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label> Enter Date of birth </label>
+<input type="text" id="dob">
+<h2 id="msg"></h2>
+
+<script>
+	var days= {
+	0: "Sunday", 1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday"
+};
+var months= {
+	0:"Jan", 1:"Feb", 2:"Mar", 3:"Apr", 4:"May", 5:"June", 6:"July", 7:"August", 8:"Sep", 9:"Oct", 10:"Nov", 11:"Dec"
+}
+var dobHandle = document.getElementById('dob');
+var msgHandle = document.getElementById('msg');
+
+dobHandle.addEventListener('change', function(){
+	var dateInput = dobHandle.value.split("-");
+	var userDate = new Date(dateInput[0], dateInput[1]-1, dateInput[2]);
+	msgHandle.innerHTML = "your birth day was" + days[userDate.getDay()];// date userDate will become the new date object in that we are calling getDay method
+});
+// .value to get the data from the html  file
+// .innerHT
+</script>
+
+</body>
+</html>

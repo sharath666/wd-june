@@ -28,15 +28,17 @@ array.each_with_index do |n, index|
 	nums.push(-1)
 	else 
 		number = array.find{|num| num > n && num >= number }
+
 		nums.push(number)
-		n==number
+ 
 end
 index+1
 end
 
+
 return nums 
 end 
-puts next_greater([1,3,2,4,5])
+puts next_greater([1,3,2,4])
 
 
 =begin

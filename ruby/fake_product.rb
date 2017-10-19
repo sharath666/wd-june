@@ -15,7 +15,8 @@ end
 
 
 products = []
-100.times do 
+10.times do 
+sleep(2)
 	products_details = {
 		:name =>Faker::Commerce.product_name,
 		:price =>Faker::Commerce.price(50..1000),

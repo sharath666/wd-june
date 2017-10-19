@@ -1,0 +1,85 @@
+<h2>No Of tickets sold  <span id="NoOfTickets"></span> </h2>
+<h2> Total <span id="TotalIncome"></span></h2>
+<table border="1" id="myTable">
+<thead>
+<th>Name</th>
+<th>No of tickets</th>
+<th>total</th>
+<th>pri_id</th>
+
+</thead>
+<tbody>
+<tr>
+<td ></td>
+<td ></td>
+
+<td ></td>
+</tr>
+</tbody>
+</table>
+
+<script>
+var myVar;
+var offset = 0;
+var no_of_tickets = 0;
+var total =0;
+var NoOfTicketsHandle = document.getElementById('NoOfTickets');
+var TotalIncome = document.getElementById('TotalIncome');
+window.addEventListener('load', function(){
+
+getRegistrations();
+function SetIntervalFunction() {
+    myVar = setInterval(getRegistrations, 3000);
+}
+SetIntervalFunction();
+	function getRegistrations(){
+
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', '/api/v1/registrations?offset='+offset, true);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState ===4 && xhr.status === 200){
+				var registrations = JSON.parse(xhr.responseText);
+				
+				var output = "";
+				function myFunction() {
+					
+    var table = document.getElementById("myTable");
+
+    
+    console.log(registrations)
+if(registrations.length == offset){
+	clearInterval(myVar);
+}
+else{
+    registrations.forEach(function(res){
+    	var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    	no_of_tickets = no_of_tickets + res.no_of_tickets;
+    	total = total + res.total;
+
+ 					cell1.innerHTML = res.name;
+					cell2.innerHTML = res.no_of_tickets;
+					cell3.innerHTML = res.total;
+					cell4.innerHTML = res.id;
+
+				});
+}
+NoOfTicketsHandle.innerHTML = no_of_tickets;
+TotalIncome.innerHTML = total;
+
+ offset += registrations.length;  
+console.log(offset);
+}
+myFunction();
+				
+
+			}
+		}
+		xhr.send();
+	}
+
+})
+</script>
